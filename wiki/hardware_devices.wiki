@@ -1,0 +1,11 @@
+#summary Serial ports on Android devices
+
+= Introduction =
+
+Here is a list of Android devices which provide a serial port on their connector.
+
+= List =
+
+- HTC Dream
+- HTC Magic (to be checked)
+- HTC Hero (to be checked)
