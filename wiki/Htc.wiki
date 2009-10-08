@@ -1,0 +1,44 @@
+#summary Activating the serial port on HTC Dream and HTC Magic
+
+= Introduction =
+
+The HTC Android devices are using an ExtUSB port. On this port, the serial port and the headset are multiplexed, thus a special configuration of the Linux kernel is needed.
+In addition, the /dev/ttyMSM2 is created with read and write access only for root, so you need a rooted device.
+
+= Building the kernel =
+
+In order to rebuild the kernel, you need:
+ * A computer running Linux
+ * _git_ to download the kernel source
+ * The cross-compilator, available in the [http://developer.android.com/sdk/ndk/1.6_r1/index.html Google NDK]
+ * _fastboot_ to launch the kernel, available [http://developer.htc.com/adp.html here]
+
+== Downloading the kernel for msm chip ==
+
+git clone git://android.git.kernel.org/kernel/msm.git
+
+== Configuring the kernel ==
+
+Please make sure the cross-compilator is in $PATH:
+export PATH=$PATH:$ANDROID_NDK_ROOT/build/prebuilt/linux-x86/arm-eabi-4.2.1/bin
+
+Select default configuration for msm chip:
+make ARCH=arm CROSS-COMPIL=arm-eabi- msm_defconfig
+
+Then modify the configuration to activate the serial port:
+make ARCH=arm CROSS-COMPIL=arm-eabi- menuconfig
+
+Once you are in _menuconfig_, please undefine the following flags:
+CONFIG_HTC_HEADSET
+CONFIG_MSM_SERIAL_DEBUGGER
+CONFIG_MSM_SERIAL_DEBUGGER_CONSOLE
+
+You are now ready to compile the kernel:
+make ARCH=arm CROSS-COMPIL=arm-eabi-
+
+== Testing the kernel without flashing your phone ==
+
+Follow the instructions on [http://developer.htc.com/adp.html#s5 HTC website] to put your phone in fastboot mode. Once in fastboot mode, simply type:
+fastboot boot arch/arm/boot/zImage
+
+Your phone should start with this kernel. You should now have a /dev/ttyMSM2 device.
