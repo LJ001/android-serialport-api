@@ -2,10 +2,10 @@
 
 = Introduction =
 
-Here is a list of Android devices which provide a serial port on their connector.
+Here is a list of Android devices which provide a serial port on their connector. You may find detailed instructions by clicking on a device.
 
 = List =
 
-- HTC Dream
-- HTC Magic (to be checked)
-- HTC Hero (to be checked)
+ * HTC Dream
+ * HTC Magic (to be checked)
+ * HTC Hero (to be checked)
