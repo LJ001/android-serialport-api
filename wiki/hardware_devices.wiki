@@ -2,10 +2,23 @@
 
 = Introduction =
 
-Here is a list of Android devices which provide a serial port on their connector. You may find detailed instructions by clicking on a device.
+Here is a list of Android devices which provide a serial port through their ExtUSB dock connectors. To learn how to enable serial communications, find your phone in the list below and click on the device name.
 
 = List =
 
- * HTC Dream
- * HTC Magic
- * HTC Hero (to be checked)
+*Tested devices*
+
+ * [Htc HTC Dream]
+  * T-Mobile G1
+  * Era G1 
+ * [Htc HTC Magic]
+  * T-Mobile myTouch 3G
+  * Rogers HTC Magic
+  * Docomo HT-03A
+
+*Untested devices*
+
+ * [Htc HTC Hero]
+  * T-Mobile G2 Touch
+ * [Htc HTC Tattoo]
+  * HTC Click
