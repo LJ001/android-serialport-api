@@ -28,7 +28,7 @@ You should have installed a utility called nandroid when you installed Cyanogen'
 
 
 
-*_[If you do not plan to build your own kernel, skip to Testing the kernel]_*
+*_If you do not plan to build your own kernel, skip to [Htc#Testing_the_kernel Testing the kernel]_*
 
 
 
@@ -120,10 +120,16 @@ Before you make your new kernel the default kernel used to boot the phone with, 
 
 Remember that `ramdisk.img` file from earlier? Find out where you stuck it. Next, look in your `cm-kernel` directory under `arch/arm/boot/` and find the `zImage` file.
 
-Once you have located these two files, you can now run the following to temporarily boot the kernel. 
+Once you have located these two files, you can now run the following to temporarily boot the kernel. If you built the kernel yourself, run the following:
+
 {{{
 $ fastboot boot <path to zImage>/zImage <path to ramdisk.img>/ramdisk.img 
 }}}
+*OR* if you are just using a boot.img from the downloads page to get serial support, run this:
+{{{
+$ fastboot boot <boot.img file> 
+}}}
+
 It will take a little while, but hopefully it should boot up, if not.. you have some debugging to do! Good thing you didn't install it already, right? 
 
 If the phone does boot up, check to make sure the phone works as expected (i.e. does wireless still work, do applications behave strangely, etc). Assuming everything looks ok, plug your phone into your computer again and run the following:
@@ -141,8 +147,15 @@ If you see ttyMSM2 in there, congratulations, your serial port works. If it does
 
 = Install the kernel =
 
-Once you finally get the kernel working to your liking, you can enter the engineering SPL on your phone again, then run the following:
+Once you finally get the kernel working to your liking, you can enter the engineering SPL on your phone again, then run one of the following:
+
+If you built your own kernel, run this:
 {{{
 $ fastboot flash:raw boot  <path to zImage>/zImage <path to ramdisk.img>/ramdisk.img 
+$ fastboot reboot
+}}}
+*OR* if you are just using a boot.img from the downloads page to get serial support, run this:
+{{{
+$ fastboot flash:raw boot  <boot.img file>
 $ fastboot reboot
 }}}
