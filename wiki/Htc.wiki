@@ -11,7 +11,7 @@ Once you have completed these instructions you can use the android-serialport-ap
  * Root your phone. [http://www.cyanogenmod.com/ Cyanogen's mod] is one of the more popular, open, and maintained projects so we will build a serial enabled kernel for this setup.
  * Install the Engineering or other SPI that enables you to fastboot. Search the [http://forum.xda-developers.com/forumdisplay.php?f=448 XDA dev forums] for this. 
  * Download and install the [http://developer.android.com/index.html Android SDK].
-  * Download a [http://developer.htc.com/adp.html fastboot fastboot] binary that works for your OS. You will need to search google for a copy of this that works for your OS.
+  * Download a [http://developer.htc.com/adp.html fastboot] binary that works for your OS.
  * Identify the kernel version you use (Settings->About Phone->Kernel version)
  * Build a G1 serial cable. [http://www.instructables.com/id/Android_G1_Serial_Cable/ This instructable] explains how to make a G1 serial to USB cable. If you need another setup such as G1 CMOS serial to 3.3v ttl, 5v serial, or standard rs232, add a comment and we can throw up a page on how to accomplish that. 
 
