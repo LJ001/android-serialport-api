@@ -74,7 +74,7 @@ $ git checkout --track -b cm-2.6.29-bfs origin/android-2.6.29-bfs
 
 First, find out where you installed the NDK. Next go to the `build/prebuilt/` folder and identify the toolchain you should use for your OS. Next run the following:
 {{{
-$ export PATH=$PATH:$ANDROID_NDK_ROOT/build/prebuilt/<your os specific choice>/arm-eabi-4.2.1/bin
+$ export PATH=$PATH:<path to NDK folder>/build/prebuilt/<your os specific choice>/arm-eabi-4.2.1/bin/
 $ echo $PATH
 }}}
 
@@ -110,7 +110,7 @@ $ mv config .config
 
 Compiling takes a while so go grab a hot snack. When you run the following, it may ask you to configure additional kernel build configuration settings if any new features were added since your kernel was last compiled too. If in doubt with these steps, hit enter to accept the default value.
 {{{
-make ARCH=arm CROSS_COMPIL=arm-eabi-
+make ARCH=arm CROSS_COMPILE=arm-eabi-
 }}}
 
 Cross your fingers it compiles ok!
