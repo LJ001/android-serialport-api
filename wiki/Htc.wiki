@@ -1,7 +1,7 @@
-#summary Activating the serial port on HTC Dream and HTC Magic
+#summary Activating the serial port on HTC Dream, HTC Magic and HTC Hero
 
 = Introduction =
-HTC Android devices such as the Dream and Magic each have an ExtUSB (Extended USB) port. This port is used to charge the phone, connect to a computer via usb (using an ExtUSB or miniUSB cable), and communicate with a headset. In addition to these functions, the port also functions as a (cmos?) level serial port which in stock setups serves as a debug port. 
+HTC Android devices such as the Dream, Magic and Hero each have an ExtUSB (Extended USB) port. This port is used to charge the phone, connect to a computer via usb (using an ExtUSB or miniUSB cable), and communicate with a headset. In addition to these functions, the port also functions as a (cmos?) level serial port which in stock setups serves as a debug port.
 
 This last feature can be used as a standard (cmos?) level (*NOT RS232 LEVEL!*) serial port to connect to anything from a server in a beowulf cluster to an arduino, but first the headset detection and debug console code in the kernel must be disable. This requires a new kernel to be compiled, or at the very least installed on the phone which the following explain how to do.
 
@@ -51,7 +51,7 @@ $ gunzip config.gz
 
 Save the `config` file that is uncompressed for later.
 
-= Grab Cyanogen's Kernel =
+= Dream and Magic: Grab Cyanogen's Kernel =
 {{{
 $ git clone git://github.com/cyanogen/cm-kernel.git
 $ cd cm-kernel
@@ -70,6 +70,12 @@ and use the one that matches your kernel version. For example, with `CyanogenMod
 $ git checkout --track -b cm-2.6.29-bfs origin/android-2.6.29-bfs
 }}}
 
+= Hero: Download kernel from [http://developer.htc.com/ HTC Developer Center] =
+{{{
+$ wget http://member.america.htc.com/download/RomCode/Source_and_Binaries/kernel_hero_0078c992.tar.bz2
+$ tar -xjf kernel_hero_0078c992.tar.bz2
+}}}
+
 = Add the Arm cross-compiler to your path =
 
 First, find out where you installed the NDK. Next go to the `build/prebuilt/` folder and identify the toolchain you should use for your OS. Next run the following:
@@ -81,7 +87,7 @@ $ echo $PATH
 If you don't see the directory appended to your PATH arguments, you may need to use another command to set environmental variables on your machine.
 
 = Configure the kernel =
-Copy the `config` file from earlier into the `cm-kernel` directory. Next, open the `config` file with your favorite text editor and search for a line containing the following:
+Copy the `config` file from earlier into the `cm-kernel` or `kernel_hero` directory. Next, open the `config` file with your favorite text editor and search for a line containing the following:
 {{{
 CONFIG_HTC_HEADSET
 }}}
