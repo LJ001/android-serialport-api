@@ -15,10 +15,13 @@ Here is a list of Android devices which provide a serial port through their ExtU
   * T-Mobile myTouch 3G
   * Rogers HTC Magic
   * Docomo HT-03A
+ * [Htc HTC Hero]
+  * T-Mobile G2 Touch
+ * [Htc HTC/Google Nexus One]
 
 *Untested devices*
 
- * [Htc HTC Hero]
-  * T-Mobile G2 Touch
  * [Htc HTC Tattoo]
   * HTC Click
+ * [Htc HTC Desire]
+ * [Htc HTC Passion]
