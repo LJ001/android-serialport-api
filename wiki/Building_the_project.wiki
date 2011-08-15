@@ -19,7 +19,7 @@ $ svn checkout http://android-serialport-api.googlecode.com/svn/trunk/android-se
 
 = Building serial_port.so =
  * All commands must be typed from the NDK root directory.
- * Configure and check the NDK installation
+ * Configure and check the NDK installation (This step not required on ndk-r6 on MacOS)
 {{{
 $ build/host-setup.sh
 }}} 
@@ -29,7 +29,7 @@ $ make APP=android-serialport-api
 }}}
 
 = Building the apk =
- * Check that the library has been generated from previous step
+ * Check that the library (libserial_port.so) has been generated from previous step
 {{{
 $ ls apps/android-serialport-api/project/libs/armeabi
 }}}
