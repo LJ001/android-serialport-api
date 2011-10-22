@@ -130,13 +130,13 @@ by:
 # CONFIG_HTC_HEADSET_V1 is not set
 }}}
 
-Save your modifications, and your good for the kernel compilation.
+Save your modifications, you are now ready for a fresh kernel compilation.
 
 = Compiling the kernel =
 
 Compiling takes a while so go grab a hot snack. When you run the following, it may ask you to configure additional kernel build configuration settings if any new features were added since your kernel was last compiled too. If in doubt with these steps, hit enter to accept the default value.
 {{{
-make ARCH=arm CROSS_COMPILE=arm-eabi-
+make ARCH=arm CROSS_COMPILE=arm-linux-androideabi-
 }}}
 
 Cross your fingers it compiles ok!
