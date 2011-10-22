@@ -72,45 +72,65 @@ $ git checkout --track -b cm-2.6.29-bfs origin/android-2.6.29-bfs
 
 = Hero: Download kernel from [http://developer.htc.com/ HTC Developer Center] =
 {{{
-$ wget http://member.america.htc.com/download/RomCode/Source_and_Binaries/kernel_hero_0078c992.tar.bz2
-$ tar -xjf kernel_hero_0078c992.tar.bz2
+$ wget http://dl4.htc.com/RomCode/Source_and_Binaries/hero-2.6.29-5f74b252.tar.gz
+$ tar -xzf hero-2.6.29-5f74b252.tar.gz
 }}}
 
 = Add the Arm cross-compiler to your path =
 
 First, find out where you installed the NDK. Next go to the `build/prebuilt/` folder and identify the toolchain you should use for your OS. Next run the following:
 {{{
-$ export PATH=$PATH:<path to NDK folder>/build/prebuilt/<your os specific choice>/arm-eabi-4.2.1/bin/
+$ export PATH=$PATH:<path to NDK folder>/toolchains/arm-linux-androideabi-4.4.3/prebuilt/<your os specific choice>/bin
 $ echo $PATH
 }}}
 
 If you don't see the directory appended to your PATH arguments, you may need to use another command to set environmental variables on your machine.
 
 = Configure the kernel =
-Copy the `config` file from earlier into the `cm-kernel` or `kernel_hero` directory. Next, open the `config` file with your favorite text editor and search for a line containing the following:
+Type the following command from your kernel root directory in order to create a default configuration file:
 {{{
-CONFIG_HTC_HEADSET
+$ make ARCH=arm CROSS_COMPILE=arm-linux-androideabi- hero_defconfig
 }}}
-This entire line should be replaced with the following:
+Next, open the `.config` file with your favorite text editor and replace the following lines:
+
+Replace these lines:
 {{{
-# CONFIG_HTC_HEADSET is not set
+CONFIG_MSM_DEBUG_UART=3
+# CONFIG_MSM_DEBUG_UART_NONE is not set
+# CONFIG_MSM_DEBUG_UART1 is not set
+# CONFIG_MSM_DEBUG_UART2 is not set
+CONFIG_MSM_DEBUG_UART3=y
+}}}
+by:
+{{{
+CONFIG_MSM_DEBUG_UART_NONE=y
+# CONFIG_MSM_DEBUG_UART1 is not set
+# CONFIG_MSM_DEBUG_UART2 is not set
+# CONFIG_MSM_DEBUG_UART3 is not set
 }}}
 
-Now repeat this process with the following two entries:
+Replace these lines:
 {{{
-CONFIG_MSM_SERIAL_DEBUGGER
-CONFIG_MSM_SERIAL_DEBUGGER_CONSOLE
-}}}
-and replace them with:
-{{{
-# CONFIG_MSM_SERIAL_DEBUGGER is not set
+CONFIG_MSM_SERIAL_DEBUGGER=y
+CONFIG_MSM_SERIAL_DEBUGGER_NO_SLEEP=y
+# CONFIG_MSM_SERIAL_DEBUGGER_WAKEUP_IRQ_ALWAYS_ON is not set
 # CONFIG_MSM_SERIAL_DEBUGGER_CONSOLE is not set
 }}}
-
-After saving the file, run the following to rename the file as `.config`. This file is used by the kernel build system to identify how to build the kernel.
+by:
 {{{
-$ mv config .config
+# CONFIG_MSM_SERIAL_DEBUGGER is not set
 }}}
+
+Replace this line:
+{{{
+CONFIG_HTC_HEADSET_V1=y
+}}}
+by:
+{{{
+# CONFIG_HTC_HEADSET_V1 is not set
+}}}
+
+Save your modifications, and your good for the kernel compilation.
 
 = Compiling the kernel =
 
