@@ -23,6 +23,7 @@ Here is a list of Android devices which provide a serial port through their dock
  * USB to serial adapter plugged on USB Host
   * Archos Gen 101
   * ZT-180
+ * FriendlyArm mini6410
 
 *Untested devices*
 
