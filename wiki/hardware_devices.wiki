@@ -27,6 +27,7 @@ Please note that in addition to hardware consideration, you may need a root acce
   * ZT-180
   * advent vega
  * FriendlyArm mini6410
+ * iMx51
 
 *Untested devices*
 
