@@ -2,7 +2,7 @@
 
 = Introduction =
 
-Here is a list of Android devices which provide a serial port through their ExtUSB dock connectors. To learn how to enable serial communications, find your phone in the list below and click on the device name.
+Here is a list of Android devices which provide a serial port through their dock connectors. To learn how to enable serial communications, find your phone in the list below and click on the device name.
 
 = List =
 
@@ -18,10 +18,10 @@ Here is a list of Android devices which provide a serial port through their ExtU
  * [Htc HTC Hero]
   * T-Mobile G2 Touch
  * [Htc HTC/Google Nexus One]
+ * [Htc HTC Tattoo]
+  * HTC Click
 
 *Untested devices*
 
- * [Htc HTC Tattoo]
-  * HTC Click
  * [Htc HTC Desire]
  * [Htc HTC Passion]
