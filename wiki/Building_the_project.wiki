@@ -4,7 +4,6 @@
 This project is composed of native code and java code. This is why you need both the Android NDK and the Android SDK to build the application. This page will briefly explain how to setup a build environment.
 
 = Prerequisites =
- * Download and install [http://www.cygwin.com cygwin] if you are running Windows. You should at least select the package "make".
  * Download and install the [http://developer.android.com/sdk/ndk/index.html Android NDK].
  * Download and install the [http://developer.android.com/index.html Android SDK].
  * Install [http://developer.android.com/sdk/eclipse-adt.html Eclipse with ADT plugin].
