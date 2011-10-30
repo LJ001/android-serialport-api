@@ -52,7 +52,7 @@ Save the `config` file that is uncompressed for later.
 
 = Dream and Magic: Grab Cyanogen's Kernel =
 {{{
-$ git clone git://github.com/cyanogen/cm-kernel.git
+$ git clone git clone git://github.com/CyanogenMod/cm-kernel.git
 $ cd cm-kernel
 $ git branch -r
 }}}
