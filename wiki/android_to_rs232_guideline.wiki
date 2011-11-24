@@ -48,7 +48,10 @@ https://docs.google.com/drawings/pub?id=1ltkNApgZH9xUvzxF3xODOludDYqXwMsTRtSco9T
  * pros
   * compatible with any Android device with an USB slave connector, i.e. 99.9% of the Android devices.
   * no need to root your phone
+  * low latency
+  * high bandwidth
+  * you may use other GPIOs of the microcontroller at the same time
  * cons
-  * probably need a special firmware in the microcontroler
+  * 
  * API
-  * to be checked, I have no IOIO device
+  * https://github.com/ytai/ioio/wiki/UART
