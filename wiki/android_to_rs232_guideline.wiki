@@ -1,6 +1,8 @@
 #summary Android to RS232 guideline
 #labels Phase-Design
 
+<wiki:toc>
+
 = Introduction =
 
 Here is a page describing the different ways you could use to connect an Android device to an RS232 peripheral.
