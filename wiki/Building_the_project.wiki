@@ -1,5 +1,7 @@
 #summary Building the project
 
+<wiki:toc>
+
 = Introduction =
 This project is composed of native code and java code. This is why you need both the Android NDK and the Android SDK to build the application. This page will briefly explain how to setup a build environment.
 
