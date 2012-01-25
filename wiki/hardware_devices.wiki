@@ -1,5 +1,7 @@
 #summary Serial ports on Android devices
 
+<wiki:toc>
+
 = Introduction =
 
 Here is a list of Android devices which provide a serial port through their dock connectors. To learn how to enable serial communications, find your phone in the list below and click on the device name.
@@ -7,7 +9,7 @@ Please note that in addition to hardware consideration, you may need a root acce
 
 = List =
 
-*Tested devices*
+==Tested devices==
 
  * [Htc HTC Dream]
   * T-Mobile G1
@@ -29,7 +31,7 @@ Please note that in addition to hardware consideration, you may need a root acce
  * FriendlyArm mini6410
  * iMx51
 
-*Untested devices*
+==Untested devices==
 
  * [Htc HTC Desire]
  * [Htc HTC Passion]
