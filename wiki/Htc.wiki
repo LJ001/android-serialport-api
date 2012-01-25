@@ -1,5 +1,7 @@
 #summary Activating the serial port on HTC Dream, HTC Magic and HTC Hero
 
+<wiki:toc>
+
 = Introduction =
 HTC Android devices such as the Dream, Magic and Hero each have an ExtUSB (Extended USB) port. This port is used to charge the phone, connect to a computer via usb (using an ExtUSB or miniUSB cable), and communicate with a headset. In addition to these functions, the port also functions as a (cmos?) level serial port which in stock setups serves as a debug port.
 
